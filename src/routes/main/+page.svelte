@@ -16,7 +16,7 @@
     </div>
     <Map />
     <div class="flex w-full px-3 justify-between">
-        <a href="/donations" class="btn">Adicionar Local de Doação</a>
-        <a href="/report" class="btn">Adicionar Desastre</a>
+        <a href="/donations" class="btn btn-primary">Adicionar Local de Doação</a>
+        <a href="/report" class="btn btn-secondary">Adicionar Desastre</a>
     </div>
 </div>
