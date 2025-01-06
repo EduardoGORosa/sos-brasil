@@ -1,4 +1,3 @@
-
 <script lang="ts">
     import { user } from "$lib/firebase";
     import Map from "$lib/components/Map.svelte";
