@@ -6,7 +6,7 @@
 <div class="flex flex-col items-center space-y-4">
     <div class="navbar bg-neutral text-neutral-content">
         <div class="navbar-start"></div>
-        <span class="navbar-center text-2xl">SOS Brasil</span>
+        <a href="/" class="navbar-center text-2xl">SOS Brasil</a>
         <div class="navbar-end"></div>
     </div>
     <div class="text-justify px-3">
@@ -15,9 +15,18 @@
     <Map />
     <div class="w-full px-3">
         {#if $user}
-            <a href="/main" class="btn w-full">Entrar como: {$user.displayName}</a>
+            <div class="w-full">Bem vindo, {$user.displayName}</div>
         {:else}
             <a href="/login" class="btn w-full">Login</a>
         {/if}
+    </div>
+</div>
+<div class="flex flex-col items-center space-y-4">
+    <div class="text-start px-3 h-20 w-full">
+        Filtros
+    </div>
+    <div class="flex w-full px-3 justify-between">
+        <a href="/donations" class="btn">Adicionar Local de Doação</a>
+        <a href="/report" class="btn">Adicionar Desastre</a>
     </div>
 </div>
