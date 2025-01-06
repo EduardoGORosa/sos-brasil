@@ -58,7 +58,7 @@
       type="text"
       bind:value={cause}
       class="border border-gray-300 rounded w-full p-2 focus:outline-none focus:border-blue-500"
-      placeholder="Specify which disaster or cause"
+      placeholder="Item a ser doado (mudar pois está causa)"
     />
   </div>
   <div class="w-full px-3">
@@ -69,25 +69,25 @@
       type="number"
       bind:value={amount}
       class="border border-gray-300 rounded w-full p-2 focus:outline-none focus:border-blue-500"
-      placeholder="Enter donation amount"
+      placeholder="Quantidade a ser doada"
     />
   </div>
   <div class="w-full px-3">
-    <h3 class="text-lg font-semibold text-gray-600 mb-4">Recent Donations</h3>
+    <h3 class="text-lg font-semibold text-gray-600 mb-4">Doações Recentes</h3>
     {#if donations.length > 0}
       <ul class="space-y-3">
         {#each donations as donation}
           <li class="border rounded p-3">
             <p class="font-semibold text-gray-700">
-              {donation.donorName} donated 
+              {donation.donorName} doado 
               <span class="text-blue-600 font-bold">${donation.amount}</span>
             </p>
-            <p class="text-sm text-gray-500">Cause: {donation.cause}</p>
+            <p class="text-sm text-gray-500">Causa: {donation.cause}</p>
           </li>
         {/each}
       </ul>
     {:else}
-      <p class="text-gray-500">No donations yet.</p>
+      <p class="text-gray-500">Sem doações feitas.</p>
     {/if}
   </div>
   <div class="w-full px-3">
@@ -95,7 +95,7 @@
       on:click={donate} 
       class="btn btn-primary w-full"
     >
-      Donate
+      Doar
     </button>
   </div>
 </div>
