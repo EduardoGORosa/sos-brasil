@@ -43,6 +43,7 @@
 		"@sveltejs/package": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
 		"autoprefixer": "^10.4.20",
+		"daisyui": "^4.12.23",
 		"eslint": "^9.7.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.36.0",
@@ -66,6 +67,8 @@
 		"@tailwindcss/forms": "^0.5.9",
 		"@tailwindcss/typography": "^0.5.15",
 		"firebase": "^11.1.0",
+		"firebase-admin": "^13.0.2",
+		"google-auth-library": "^9.15.0",
 		"leaflet": "^1.9.4"
 	}
 }
