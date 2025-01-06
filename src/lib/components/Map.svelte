@@ -25,6 +25,7 @@
     #map {
         width: 95%;
         height: 600px;
+        border-radius: 16px;
     }
 </style>
 
