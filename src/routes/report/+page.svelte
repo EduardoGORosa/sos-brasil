@@ -182,7 +182,7 @@
   <div class="w-full px-3">
     <button
       on:click={submitDisaster}
-      class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-500 transition w-full disabled:opacity-50 disabled:cursor-not-allowed"
+      class="btn btn-primary w-full"
       disabled={isSubmitting}
     >
       {#if isSubmitting}
