@@ -15,9 +15,9 @@
     <Map />
     <div class="w-full px-3">
         {#if $user}
-            <a href="/login" class="btn w-full">Login</a>
+            <a href="/main" class="btn w-full">Entrar como: {$user.displayName}</a>
         {:else}
-            <a href="/main" class="btn w-full">Entrar como: Leonardo (cidadão)</a>
+            <a href="/login" class="btn w-full">Login</a>
         {/if}
     </div>
 </div>

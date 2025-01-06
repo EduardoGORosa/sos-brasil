@@ -134,83 +134,62 @@
 </script>
 
 <style>
-  /* Optional: Customize styles as needed */
-  .map-container {
-    width: 100%;
-    height: 400px;
-    border: 1px solid #e2e8f0;
-    border-radius: 0.375rem;
-    overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  #report-map {
+      width: 100%;
+      height: 400px;
+      border-radius: 16px;
   }
 </style>
 
-<div class="max-w-screen-lg mx-auto mt-10 space-y-6">
-  <h2 class="text-2xl font-semibold text-gray-700">Report a Disaster</h2>
-
-  <div class="flex flex-col md:flex-row gap-6">
-    <!-- Form Section -->
-    <div class="w-full md:w-1/2 bg-white p-6 rounded shadow space-y-4">
-      <div>
-        <label class="block text-gray-600 mb-1 font-semibold" for="disasterType">Type of Disaster</label>
-        <select
-          id="disasterType"
-          bind:value={disasterType}
-          class="border border-gray-300 rounded w-full p-2 focus:outline-none focus:border-blue-500"
-        >
-          <option value="" disabled selected>Select disaster type</option>
-          <option value="Flood">Flood</option>
-          <option value="Hurricane">Hurricane</option>
-          <option value="Earthquake">Earthquake</option>
-          <option value="Wildfire">Wildfire</option>
-          <option value="Tornado">Tornado</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-
-      <div>
-        <label class="block text-gray-600 mb-1 font-semibold" for="description">Description</label>
-        <textarea
-          id="description"
-          bind:value={description}
-          rows="4"
-          class="border border-gray-300 rounded w-full p-2 focus:outline-none focus:border-blue-500"
-          placeholder="Describe the disaster, severity, etc."
-        ></textarea>
-      </div>
-
-      <div>
-        <p class="text-sm text-gray-500">
-          <strong>Selected Coordinates:</strong> 
-          <span class="ml-1">{lat !== null ? lat.toFixed(5) : '-'} / {lng !== null ? lng.toFixed(5) : '-'}</span>
-        </p>
-      </div>
-
-      <button
-        on:click={submitDisaster}
-        class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-500 transition w-full disabled:opacity-50 disabled:cursor-not-allowed"
-        disabled={isSubmitting}
-      >
-        {#if isSubmitting}
-          Submitting...
-        {:else}
-          Submit Disaster
-        {/if}
-      </button>
+<div class="flex flex-col items-center space-y-4">
+  <div class="navbar bg-neutral text-neutral-content">
+    <div class="navbar-start">
+      <a href="/main" class="btn btn-link">Voltar</a>
     </div>
-
-    <!-- Leaflet Map for Picking Location -->
-    <div id="report-map" class="w-full md:w-1/2 h-[400px] rounded overflow-hidden border border-gray-200 shadow map-container"></div>
+    <span class="navbar-center text-2xl">Reportar Desastre</span>
+    <div class="navbar-end"></div>
   </div>
-
-  <!-- Debugging Section -->
-  <div class="mt-4 p-4 bg-gray-100 rounded">
-    {#if $user}
-      <p class="text-green-600">Logged in as: {$user.email}</p>
-      <p class="text-blue-600">UID: {$user.uid}</p>
-    {:else}
-      <p class="text-red-600">You are not logged in.</p>
-    {/if}
+  <div class="w-full px-3">
+    <label class="block text-gray-600 mb-1 font-semibold" for="disasterType">Tipo de Desastre</label>
+    <select
+      id="disasterType"
+      bind:value={disasterType}
+      class="border border-gray-300 rounded w-full p-2 focus:outline-none focus:border-blue-500"
+    >
+      <option value="" disabled selected>Selecione o tipo de desastre</option>
+      <option value="Flood">Flood</option>
+      <option value="Hurricane">Hurricane</option>
+      <option value="Earthquake">Earthquake</option>
+      <option value="Wildfire">Wildfire</option>
+      <option value="Tornado">Tornado</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+  <div class="w-full px-3">
+    <label class="block text-gray-600 mb-1 font-semibold" for="description">Local do Desastre</label>
+    <div id="report-map"></div>
+  </div>
+  <div class="w-full px-3">
+    <label class="block text-gray-600 mb-1 font-semibold" for="description">Description</label>
+    <textarea
+      id="description"
+      bind:value={description}
+      rows="4"
+      class="border border-gray-300 rounded w-full p-2 focus:outline-none focus:border-blue-500"
+      placeholder="Descreva o desastre ..."
+    ></textarea>
+  </div>
+  <div class="w-full px-3">
+    <button
+      on:click={submitDisaster}
+      class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-500 transition w-full disabled:opacity-50 disabled:cursor-not-allowed"
+      disabled={isSubmitting}
+    >
+      {#if isSubmitting}
+        Submitting...
+      {:else}
+        Submit Disaster
+      {/if}
+    </button>
   </div>
 </div>
-
