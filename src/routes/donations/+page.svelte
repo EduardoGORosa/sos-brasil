@@ -45,7 +45,7 @@
 <div class="flex flex-col items-center space-y-4">
   <div class="navbar bg-neutral text-neutral-content">
     <div class="navbar-start">
-      <a href="/main" class="btn btn-link">Voltar</a>
+      <a href="/" class="btn btn-link">Voltar</a>
     </div>
     <span class="navbar-center text-2xl">Doação</span>
     <div class="navbar-end"></div>
